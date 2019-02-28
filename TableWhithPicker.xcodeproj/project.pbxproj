@@ -12,6 +12,8 @@
 		AC55A09B2227E67B00BD84C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC55A0992227E67B00BD84C1 /* Main.storyboard */; };
 		AC55A09D2227E67C00BD84C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC55A09C2227E67C00BD84C1 /* Assets.xcassets */; };
 		AC55A0A02227E67C00BD84C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC55A09E2227E67C00BD84C1 /* LaunchScreen.storyboard */; };
+		AC55A0A82227E6D600BD84C1 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55A0A72227E6D600BD84C1 /* TimeTableViewController.swift */; };
+		AC55A0AA2227E6F000BD84C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55A0A92227E6F000BD84C1 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AC55A09C2227E67C00BD84C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC55A09F2227E67C00BD84C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC55A0A12227E67C00BD84C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC55A0A72227E6D600BD84C1 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		AC55A0A92227E6F000BD84C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				AC55A0952227E67B00BD84C1 /* AppDelegate.swift */,
 				AC55A0972227E67B00BD84C1 /* ViewController.swift */,
 				AC55A0992227E67B00BD84C1 /* Main.storyboard */,
+				AC55A0A72227E6D600BD84C1 /* TimeTableViewController.swift */,
+				AC55A0A92227E6F000BD84C1 /* Model.swift */,
 				AC55A09C2227E67C00BD84C1 /* Assets.xcassets */,
 				AC55A09E2227E67C00BD84C1 /* LaunchScreen.storyboard */,
 				AC55A0A12227E67C00BD84C1 /* Info.plist */,
@@ -137,6 +143,8 @@
 			files = (
 				AC55A0982227E67B00BD84C1 /* ViewController.swift in Sources */,
 				AC55A0962227E67B00BD84C1 /* AppDelegate.swift in Sources */,
+				AC55A0A82227E6D600BD84C1 /* TimeTableViewController.swift in Sources */,
+				AC55A0AA2227E6F000BD84C1 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
