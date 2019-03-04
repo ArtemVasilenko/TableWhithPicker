@@ -1,82 +1,115 @@
-//
-//  TimeTableViewController.swift
-//  TableWhithPicker
-//
-//  Created by Артем on 2/28/19.
-//  Copyright © 2019 Артем. All rights reserved.
-//
-
 import UIKit
 
-class TimeTableViewController: UITableViewController {
-
+class TimeTableViewController: UITableViewController, DataTime {
+    
+    
+    
+//    var timePicker = UIPickerView()
+//    var arrPicker = [UIPickerView()]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        createDataTime()
 
+//        for _ in 1..<24 {
+//            arrPicker.append(timePicker)
+//        }
+//
+//        arrPicker.forEach{
+//            $0.delegate = self
+//            $0.dataSource = self
+//        }
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-       
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 24
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    
 
-    /*
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let timePicker = UIPickerView()
+        var arrPicker = [UIPickerView()]
+        
+        for _ in 1..<24 {
+            arrPicker.append(timePicker)
+        }
+        
+        arrPicker.forEach{
+            $0.delegate = self
+            $0.dataSource = self
+        }
+        
+        timePicker.delegate = self
+        timePicker.dataSource = self
+        
+        cell.frame = CGRect(x: 0, y: 0, width: 320, height: 180)
+        
+        timePicker.frame = CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height)
+        
+        
+        print(timePicker.frame)
+        print("cell \(cell.frame)")
+        
+        cell.addSubview(arrPicker[indexPath.row])
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)" + "huy")
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension TimeTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        createDataTime()
+        switch component {
+        case 0: return Time.hour.count
+        case 1: return Time.minute.count
+        case 2: return Time.second.count
+        default: return 0
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        switch component {
+        case 0: return String(Time.hour[row])
+        case 1: return String(Time.minute[row])
+        case 2: return String(Time.second[row])
+        default: return ""
+        }
+    }
+    
+    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    //        if component == 0 && pickerTime.index(of: pickerView) == 0 {
+    //
+    //            for i in 1..<3 {
+    //                pickerTime[i].selectRow((row + i) % 24, inComponent: 0, animated: true)
+    //            }
+    //        }
+    
+}
+
+
